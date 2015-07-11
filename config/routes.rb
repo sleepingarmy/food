@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-  get 'items/index'
 
-  get 'items/edit'
-
-  get 'items/show'
-
-  get 'items/new'
+  get '/my_basket' => 'users#show'
 
   root to: 'visitors#index'
   

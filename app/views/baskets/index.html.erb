@@ -1,10 +1,10 @@
-<h1 class="page-header">My baskets</h1>
+<h1 class="page-header">Pick Up a Basket!</h1>
 <% @baskets.each do |basket| %>
   <%= basket.type %>
   <%= basket.instructions %>
   <% if user_signed_in? %>
-    <%= link_to 'edit basket', edit_basket_path(@basket.id) %>
+    <%= link_to 'edit basket', edit_basket_path(basket.id) %>
   <% end %>
-  <p>deliver in <%= basket.time_frame %> minutes </p>
+  <p>deliver in <%= basket.time_frame %> </p>
 <% end %>
   

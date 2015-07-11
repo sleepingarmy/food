@@ -1,5 +1,5 @@
 <h3><%= @user.name%>'s Baskets</h3>
-<%= @user.basket each do |basket|%>
+<% @user.baskets.each do |basket|%>
 	<%= basket.name %>
 <%end%>
 

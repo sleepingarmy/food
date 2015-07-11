@@ -1,20 +1,20 @@
 <h1 class="page-header">edit basket</h1>
 <p>edit basket form goes here</p>
 
-<%= form_for @basket, url: baskets_path do |f| %>
+<%= form_for @basket do |f| %>
   
   <div class="form-group">  
     <%= f.label :type %>
-    <%= f.select :type, options_for_select("groceries", "restaurant", "other")%>
+    <%= f.select :type, options_for_select(['groceries', 'restaurant', 'other'])%>
   </div>
   
   <div class="form-group"></div>
-    <b> deliver in <b>
-    <%= f.number_field :time_frame %> <b>hour(s)</b>
+    <b> Deliver By <b>
+    <%= f.number_field :time_frame %><b>hour(s)</b>
   </div>
   
   <div class="form-group">
-    <b> special instructions </b>
+    <b> Special Instructions </b>
     <%= f.text_field :instructions %>
   </div>
 

@@ -1,6 +1,5 @@
 
-<h1 class="page-header">My baskets</h1>
-
+<h1 class="page-header">Pick Up a Basket!</h1>
 <% @baskets.each do |basket| %>
   <div class="col-sm-3">
   <p>name: <%basket.name%></p>
@@ -9,10 +8,8 @@
   <p>deliver in <%= basket.time_frame %> minutes </p>
   <%= link_to "Pick up this basket", send_sms_path(basket.id) %>
   <% if user_signed_in? %>
-    <p>edit</p>
-    <%= link_to 'edit', edit_basket_path(basket.id) %>
+    <%= link_to 'edit basket', edit_basket_path(basket.id) %>
   <% end %>
-  </div>
-
+  <p>deliver in <%= basket.time_frame %> </p>
 <% end %>
   

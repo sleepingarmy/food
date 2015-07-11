@@ -1,7 +1,7 @@
 <h1 class="page-header">edit basket</h1>
-<p>edit basket form goes here</p>
 
 <%= form_for @basket, url: baskets_path do |basket| %>
+<%= link_to 'add item to this basket', new_basket_item_path(@basket.id) %>
   
   <div class="form-group">  
     <%= basket.label :category %>
@@ -18,12 +18,10 @@
     <%= basket.text_field :instructions %>
   </div>
 
-  
+
   <%= basket.submit "save" %>
 <% end %>
-  
-  <% @items.each do |item| %>
-    <%= item.name %>
-  <% end %>
+
+
 
 

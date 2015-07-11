@@ -20,3 +20,10 @@
 
   <%= f.submit "save" %>
 <% end %>
+
+
+  <%= link_to 'add item', new_basket_item_path(@basket.id, @item.id) %>
+  <li><%= link_to 'Pick Up Baskets', baskets_path %></li>
+
+
+

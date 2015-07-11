@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:edit, :show, :delete, :update]
+  before_action :find_basket
 
   def index
     @items = @basket.items.all
@@ -43,6 +44,13 @@ class ItemsController < ApplicationController
 
   def find_item
     @item = Item.find_by(id: params[:id])
+  end
+
+  def find_basket
+    @basket = Basket.find_by(id: params[:basket_id])
+    unless @basket
+      render(text: 'not found', status: 404)
+    end
   end
 
 end

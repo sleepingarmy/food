@@ -1,6 +1,6 @@
 class BasketsController < ApplicationController
-  before_action :find_basket, except: [:index]
-  # before_action :find_item, only: [:edit]
+  before_action :find_basket, except: [:index, :new]
+  before_action :find_item, only: [:edit, :update]
   before_action :set_category
 
   def index

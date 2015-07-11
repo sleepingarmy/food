@@ -250,3 +250,12 @@ footer {
 .white {
     color: white;
 }
+
+.right-position {
+    margin-top: 10px;
+
+}
+
+.bigger{
+    font-size: 2em;
+}

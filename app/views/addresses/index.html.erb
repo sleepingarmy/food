@@ -7,7 +7,7 @@
 			<%= address.city %>
 			<%= address.state%>
 			<%= address.zip %>
-			<%=link_to("Show Address", address_path(@address.id)) %>
+			<%=link_to("Show Address", address_path(address.id)) %>
 		</li>
 	<%end%>
 </ul>

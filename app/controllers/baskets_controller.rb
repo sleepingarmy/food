@@ -11,7 +11,8 @@ class BasketsController < ApplicationController
   end
 
   def create
-    if @basket.create(basket_params).save
+    @basket= Basket.create(basket_params)
+    if @basket.save
       redirect_to basket_path(@basket.id)
     else
       render :new
@@ -30,7 +31,6 @@ class BasketsController < ApplicationController
   end
 
   def show
-    @items = @basket.items
   end
 
   def destroy

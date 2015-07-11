@@ -5,16 +5,16 @@
   
   <div class="form-group">  
     <%= f.label :type %>
-    <%= f.text_field :type %>
+    <%= f.select :type, options_for_select("groceries", "restaurant", "other")%>
   </div>
   
   <div class="form-group"></div>
-    <%= f.label :time_frame %>
-    <%= f.number_field :time_frame %>
+    <b> deliver in <b>
+    <%= f.number_field :time_frame %> <b>hour(s)</b>
   </div>
   
   <div class="form-group">
-    <%= f.label :instructions %>
+    <b> special instructions </b>
     <%= f.text_field :instructions %>
   </div>
 

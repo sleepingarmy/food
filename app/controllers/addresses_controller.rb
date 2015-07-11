@@ -13,9 +13,9 @@ class AddressesController < ApplicationController
 
 	def create
     @address=Address.create(address_params)
-    if @adddress.save
+    if @address.save
       flash[:notice]="Address created"
-      redirect_to("")
+      redirect_to("addresses_path")
     else
       flash[:error]="Address not created."
       render :new
@@ -48,7 +48,7 @@ class AddressesController < ApplicationController
   end
 
   def find_address
-    @address = address.find_by(id: params[:id])
+    @address = Address.find_by(id: params[:id])
     unless @address
       render(text: "address not found.", status: :not_found)
     end

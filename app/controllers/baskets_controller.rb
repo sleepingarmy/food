@@ -4,7 +4,7 @@ class BasketsController < ApplicationController
   def index
     @baskets = Basket.all
   end
-  
+
   def show
     @items = @basket.items
   end
@@ -12,7 +12,8 @@ class BasketsController < ApplicationController
   private
   
   def find_basket
-    @basket = Basket.find_by(id: params[:id])
+    @basket = Basket.find_by(id: params[:basket_id])
+    binding.pry
     unless @basket
       render(text: 'not found', status: 404)
     end

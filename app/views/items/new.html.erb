@@ -1,5 +1,7 @@
 <h1>create new item</h1>
-<%= form_for @item do |f| %>
+
+<%= form_for @item, url: basket_items_path(@basket.id), :html => { :multipart => true } do |f| %>
+
 	<%= f.label(:name)%>
 	<%= f.text_field(:name)%>
 	<br>

@@ -31,10 +31,11 @@ ActiveRecord::Schema.define(version: 20150711205042) do
   create_table "baskets", force: :cascade do |t|
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "type"
+    t.string   "category"
     t.integer  "user_id"
     t.integer  "time_frame"
     t.text     "instructions"
+    t.string   "name"
   end
 
   create_table "drivers", force: :cascade do |t|

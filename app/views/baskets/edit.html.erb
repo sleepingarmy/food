@@ -1,11 +1,18 @@
 <h1 class="page-header">edit basket</h1>
-<p>edit basket form goes here</p>
 
-<%= form_for @basket, url: baskets_path do |f| %>
-  
+<%= link_to 'add item to this basket', new_basket_item_path(@basket.id) %>
+
+<%= form_for @basket do |f| %>
+
+    <div class="form-group">  
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+  </div>
   <div class="form-group">  
-    <%= f.label :type %>
-    <%= f.select :type, options_for_select("groceries", "restaurant", "other")%>
+    <%= f.label :category %>
+    <%= f.select :category, options_for_select(['groceries', 'general', 'restaurant']) %>
   </div>
   
   <div class="form-group"></div>
@@ -18,5 +25,10 @@
     <%= f.text_field :instructions %>
   </div>
 
-  <%= f.submit "save" %>
+
+  <%= f.submit "save"  %>
 <% end %>
+
+
+
+

@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :addresses
   has_many :baskets
+  has_many :baskets
 end

@@ -1,4 +1,7 @@
 <h1> My Delivery Addresses</h1>
+<ul>
 <% @addresses.each do |address| %>
-	<%= link_to(address.name, address_path(@address.id) %>
+	<li>
+		<%= link_to("#{address.street, address.city, address.state, address.zip}", address_path(@address.id) %>
 <%end%>
+</ul>

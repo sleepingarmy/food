@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+# messaging gem
 gem 'mailboxer'
 group :development, :test do
   gem 'byebug'

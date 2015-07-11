@@ -1,2 +1,3 @@
 class Grocery < Basket
+  
 end

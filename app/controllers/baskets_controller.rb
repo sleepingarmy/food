@@ -38,9 +38,12 @@ class BasketsController < ApplicationController
   end
 
   private
+  def basket_params
+    params.require(:basket).permit(:type, :time_frame, :instructions)
+  end
   
   def find_basket
-    @basket = Basket.find_by(id: params[:basket_id])
+    @basket = Basket.find_by(id: params[:id])
     unless @basket
       render(text: 'not found', status: 404)
     end

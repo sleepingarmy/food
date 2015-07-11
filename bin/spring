@@ -7,6 +7,8 @@ unless defined?(Spring)
   require "rubygems"
   require "bundler"
 
+  # Spring.watch "config/application.yml"
+
   if match = Bundler.default_lockfile.read.match(/^GEM$.*?^    (?:  )*spring \((.*?)\)$.*?^$/m)
     Gem.paths = { "GEM_PATH" => [Bundler.bundle_path.to_s, *Gem.path].uniq }
     gem "spring", match[1]

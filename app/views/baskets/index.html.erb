@@ -1,9 +1,9 @@
 <h1 class="page-header">all baskets</h1>
-
+hi
 <% @baskets.each do |basket| %>
   <div class="col-sm-3">
   <p>category: <%= basket.category %></p>
-  <p>instructions; <%= basket.instructions %></p>
+  <p>instructions: <%= basket.instructions %></p>
   <p>deliver in <%= basket.time_frame %> minutes </p>
   <%= link_to "Pick up this basket", send_sms_path(basket.id) %>
   <% if user_signed_in? %>

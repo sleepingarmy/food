@@ -45,7 +45,7 @@ class BasketsController < ApplicationController
 
   private
   def basket_params
-    params.require(:basket).permit(:category, :time_frame, :instructions)
+    params.fetch(:basket, {}).permit(:name, :category, :time_frame, :instructions)
   end
   
   def find_basket

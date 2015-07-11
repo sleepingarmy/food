@@ -27,7 +27,7 @@ class BasketsController < ApplicationController
   end
 
   def update
-    if @basket.update
+    if @basket.update(basket_params)
       redirect_to basket_path(@basket.id)
     else
       render :edit

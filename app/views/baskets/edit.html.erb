@@ -1,25 +1,26 @@
 <h1 class="page-header">edit basket</h1>
 
-<%= form_for @basket, url: baskets_path do |basket| %>
 <%= link_to 'add item to this basket', new_basket_item_path(@basket.id) %>
+
+<%= form_for @basket, url: basket_path(@basket.id) do |f| %>
   
   <div class="form-group">  
-    <%= basket.label :category %>
-    <%= basket.text_field :category %>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
   </div>
   
   <div class="form-group"></div>
-    <%= basket.label :time_frame %>
-    <%= basket.number_field :time_frame %>
+    <%= f.label :time_frame %>
+    <%= f.number_field :time_frame %>
   </div>
   
   <div class="form-group">
-    <%= basket.label :instructions %>
-    <%= basket.text_field :instructions %>
+    <%= f.label :instructions %>
+    <%= f.text_field :instructions %>
   </div>
 
 
-  <%= basket.submit "save" %>
+  <%= f.submit "save"  %>
 <% end %>
 
 

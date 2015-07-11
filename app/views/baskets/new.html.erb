@@ -1,22 +1,22 @@
-<h1 class="page-header">create new basket</h1>
-<p>new basket form goes here</p>
+<h1 class="page-header">Create New Basket</h1>
 
 <%= form_for @basket do |f| %>
   
   <div class="form-group">  
     <%= f.label :type %>
-    <%= f.text_field :type %>
+    <%= f.select :type, options_for_select(['groceries', 'restaurant', 'other'])%>
   </div>
   
   <div class="form-group"></div>
-    <%= f.label :time_frame %>
-    <%= f.number_field :time_frame %>
+    <b> Deliver By <b>
+    <%= f.number_field :time_frame %><b>hour(s)</b>
   </div>
   
   <div class="form-group">
-    <%= f.label :instructions %>
+    <b> Special Instructions </b>
     <%= f.text_field :instructions %>
   </div>
 
   <%= f.submit "save" %>
 <% end %>
+

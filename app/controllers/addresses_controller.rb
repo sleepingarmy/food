@@ -1,10 +1,9 @@
-class AddressController < ApplicationController
+class AddressesController < ApplicationController
   before_action :find_address, only: [:edit, :update, :show, :destroy]
-  before_action :find_user
   before_action :authenticate_user! 
   # skip_before_action :verify_authenticity_token, only: :completed
 	def index
-		@addresses = @user.address
+		@addresses = Address.all
 	end
 
 	def new
@@ -53,9 +52,5 @@ class AddressController < ApplicationController
     unless @address
       render(text: "address not found.", status: :not_found)
     end
-  end
-
-  def find_user
-    @user = user.find(params[:user_id])
   end
 end

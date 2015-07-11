@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :bakset do
+  factory :basket do
     
   end
 

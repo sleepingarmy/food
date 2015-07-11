@@ -30,11 +30,11 @@
 <body>
     <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-center">
+        <div class="text-vertical-center ">
             <h1>Gimme Getme</h1>
             <h3>For all you lazy asses out there.</h3>
             <br>
-            <a href="new_user_path" class="btn btn-dark btn-lg">Deliver My Food</a>
+            <%= link_to("Deliver My Food", new_user_registration_path, class: "btn btn-dark btn-lg")%> 
         </div>
     </header>
 
@@ -43,8 +43,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-                    <p class="lead">This theme features some wonderful photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
+                    <h2>Need groceries, but have no car (or motivation)?
+                        <br> Or have a car, but need money?
+                    </h2>
+                    <p class="lead">You've come to the right place. Join our food delivery system, <em> Gimme Getme </em>. </p>
                 </div>
             </div>
             <!-- /.row -->
@@ -54,11 +56,11 @@
 
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="services bg-primary">
+    <section id="services" class="services darkgreen">
         <div class="container">
             <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Our Services</h2>
+                <div class="col-lg-10 col-lg-offset-1 white">
+                    <h2>How It Works</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
@@ -68,10 +70,10 @@
                                 <i class="fa fa-cloud fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Add your address</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>so that users near you may get your stuff for you.</p>
+                                
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -81,10 +83,9 @@
                                 <i class="fa fa-compass fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Make a Basket</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>Create a list of items for someone else to deliver for you. Add the items' name, quantity, due date, and even special instructions.</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -94,10 +95,9 @@
                                 <i class="fa fa-flask fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Pick Up a Basket</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>Wanna earn some money? Live close by? Pick up a basket at an address near you, buy the items, deliver, and get paid. </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -107,10 +107,9 @@
                                 <i class="fa fa-shield fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Knock-Knock</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <p>and wala, your groceries, right in front of your feet.</p>
                             </div>
                         </div>
                     </div>
@@ -126,7 +125,7 @@
     <!-- Callout -->
     <aside class="callout">
         <div class="text-vertical-center">
-            <h1>Vertically Centered Text</h1>
+            <h1>Groceries and Goodies, <br> right in your door.</h1>
         </div>
     </aside>
 
@@ -178,7 +177,7 @@
     </section>
 
     <!-- Call to Action -->
-    <aside class="call-to-action bg-primary">
+    <aside class="call-to-action darkgreen">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

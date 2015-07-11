@@ -33,6 +33,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if @user.destroy
+      flash[:alert]="User successfully deleted. Thank you for joining."
+    end
+    redirect_to(root_path)
+  end
+
   private
 
   def find_user
@@ -42,16 +49,20 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    if @user.destroy
-      flash[:alert]="User successfully deleted. Thank you for joining."
-    end
-    redirect_to(root_path)
-  end
-
 
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation, :email)
+
+  def send_sms
+    user = current_user
+    basket = Basket.find(params[:basket_id])
+    recipient = basket.user
+
+    body = "Your basket (#{basket.name}) is being delivered by #{user.name}"
+
+    user.send_sms(recipient, body)
+
+    redirect_to users_path, :alert => 'SMS Sent'
   end
 
 end

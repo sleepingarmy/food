@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   
   devise_for :users
 
+  post "baskets/:basket_id/send_sms" => "users#send_sms", as: :send_sms
+
   resources :baskets do
     resources :items do
     end
   end
-
 end

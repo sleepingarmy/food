@@ -8,8 +8,10 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem "figaro"
 # messaging gem
 gem 'mailboxer'
+gem 'twilio-ruby', '~> 4.2.1'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

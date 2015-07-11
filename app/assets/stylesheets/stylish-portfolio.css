@@ -238,3 +238,15 @@ hr.small {
 footer {
     padding: 100px 0;
 }
+
+.darkred{
+    background-color: #a72604;
+}
+
+.darkgreen{
+    background-color: #45523b;
+}
+
+.white {
+    color: white;
+}

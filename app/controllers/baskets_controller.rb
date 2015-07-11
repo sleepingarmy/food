@@ -13,7 +13,7 @@ class BasketsController < ApplicationController
   
   def find_basket
     @basket = Basket.find_by(id: params[:basket_id])
-    binding.pry
+    # binding.pry
     unless @basket
       render(text: 'not found', status: 404)
     end

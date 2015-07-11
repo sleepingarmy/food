@@ -1,0 +1,22 @@
+<h1 class="page-header">edit basket</h1>
+<p>edit basket form goes here</p>
+
+<%= form_for @basket, url: baskets_path do |f| %>
+  
+  <div class="form-group">  
+    <%= f.label :type %>
+    <%= f.text_field :type %>
+  </div>
+  
+  <div class="form-group"></div>
+    <%= f.label :time_frame %>
+    <%= f.number_field :time_frame %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :instructions %>
+    <%= f.text_field :instructions %>
+  </div>
+
+  <%= f.submit "save" %>
+<% end %>

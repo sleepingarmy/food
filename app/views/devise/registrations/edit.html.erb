@@ -13,6 +13,10 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
     </div>
+    <div class="form-group">
+      <%= f.label :phone %>
+      <%= f.text_field :phone, :autofocus => true, class: 'form-control', :placeholder => "+12345678900" %>
+    </div>
     <fieldset>
       <p>Leave these fields blank if you don't want to change your password.</p>
       <div class="form-group">

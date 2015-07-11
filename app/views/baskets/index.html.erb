@@ -1,6 +1,6 @@
 <h1 class="page-header">all baskets</h1>
 <% @baskets.each do |basket| %>
-  <%= basket.type %>
+  <%= basket.category %>
   <%= basket.instructions %>
   <% if user_signed_in? %>
     <%= link_to 'edit basket', edit_basket_path(@basket.id) %>

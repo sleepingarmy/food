@@ -7,11 +7,12 @@ class BasketsController < ApplicationController
   end
 
   def new
-    @basket = Basket.new
+    @user = current_user
+    @basket = @user.baskets.build
   end
 
   def create
-    if @basket.create(basket_params).save
+    if @user.baskets.create(basket_params).save
       redirect_to basket_path(@basket.id)
     else
       render :new

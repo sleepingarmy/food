@@ -12,6 +12,7 @@ gem "figaro"
 # messaging gem
 gem 'mailboxer'
 gem 'twilio-ruby', '~> 4.2.1'
+gem "rolify"
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

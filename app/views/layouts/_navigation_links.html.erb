@@ -1,10 +1,17 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= link_to 'view your baskets', baskets_path %></li>
-  <li><%= link_to 'view baskets', baskets_path %></li>
-  <li><%= link_to 'new basket', new_basket_path %></li>
-  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+  <li><%= link_to 'Add New Basket', new_basket_path %></li>
+  <li><%= link_to 'My Baskets', baskets_path %></li>
+  <li><%= link_to 'Pick Up Baskets', baskets_path %></li>
+  <li><button class="dropdown-toggle p-relative" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  	Account
+  	<span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"> 
+    <li><%= link_to 'Address', address_ %></li>
+	  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+	  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+	</ul>
 <% else %>
   <li><%= link_to 'Sign in', new_user_session_path %></li>
   <li><%= link_to 'Sign up', new_user_registration_path %></li>

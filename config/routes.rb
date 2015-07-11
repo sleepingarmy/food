@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 
   post "baskets/:basket_id/send_sms" => "users#send_sms", as: :send_sms
 
-  resrouces :addresses
-  
+  resources :addresses
+
   resources :baskets do
     resources :items do
     end

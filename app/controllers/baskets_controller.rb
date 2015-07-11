@@ -31,7 +31,6 @@ class BasketsController < ApplicationController
   end
 
   def show
-    @items = @basket.items
   end
 
   def destroy

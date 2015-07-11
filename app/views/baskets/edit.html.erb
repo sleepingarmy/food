@@ -1,22 +1,29 @@
 <h1 class="page-header">edit basket</h1>
 <p>edit basket form goes here</p>
 
-<%= form_for @basket, url: baskets_path do |f| %>
+<%= form_for @basket, url: baskets_path do |basket| %>
   
   <div class="form-group">  
-    <%= f.label :category %>
-    <%= f.text_field :category %>
+    <%= basket.label :category %>
+    <%= basket.text_field :category %>
   </div>
   
   <div class="form-group"></div>
-    <%= f.label :time_frame %>
-    <%= f.number_field :time_frame %>
+    <%= basket.label :time_frame %>
+    <%= basket.number_field :time_frame %>
   </div>
   
   <div class="form-group">
-    <%= f.label :instructions %>
-    <%= f.text_field :instructions %>
+    <%= basket.label :instructions %>
+    <%= basket.text_field :instructions %>
   </div>
 
-  <%= f.submit "save" %>
+  
+  <%= basket.submit "save" %>
 <% end %>
+  
+  <% @items.each do |item| %>
+    <%= item.name %>
+  <% end %>
+
+

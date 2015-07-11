@@ -1,5 +1,6 @@
 class BasketsController < ApplicationController
-  before_action :find_basket, only: [:edit, :show, :delete, :update]
+  before_action :find_basket, except: [:index]
+  # before_action :find_item, only: [:edit]
   before_action :set_category
 
   def index
@@ -21,7 +22,8 @@ class BasketsController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
+    @items = @basket.items
   end
 
   def update
@@ -51,6 +53,10 @@ class BasketsController < ApplicationController
     unless @basket
       render(text: 'not found', status: 404)
     end
+  end
+
+  def find_item
+    @item = @basket.items.find_by(id: params[:id])
   end
 
   def category

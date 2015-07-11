@@ -17,8 +17,24 @@ class BasketsController < ApplicationController
     end
   end
 
+  def edit 
+  end
+
+  def update
+    if @basket.update
+      redirect_to basket_path(@basket.id)
+    else
+      render :edit
+    end
+  end
+
   def show
     @items = @basket.items
+  end
+
+  def destroy
+    @basket.destroy
+    redirect_to baskets_path
   end
 
   private

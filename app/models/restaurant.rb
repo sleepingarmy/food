@@ -1,0 +1,2 @@
+class Restaurant < Basket
+end

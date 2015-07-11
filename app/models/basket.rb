@@ -1,22 +1,21 @@
 class Basket < ActiveRecord::Base
   belongs_to :user
-  self.inheritance_column = :type
-
-  def self.types 
+  self.inheritance_column = :category
+  def self.categories 
     %w(Grocery Restaurant General)
   end
 
   #scopes
   def self.grocery
-    where(type: 'Grocery')
+    where(category: 'Grocery')
   end
 
   def self.restaurant
-    where(type: 'Restaurant')
+    where(category: 'Restaurant')
   end
 
   def self.general
-    where(type: 'General')
+    where(category: 'General')
   end
 
 end

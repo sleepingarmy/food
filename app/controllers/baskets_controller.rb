@@ -1,6 +1,6 @@
 class BasketsController < ApplicationController
   before_action :find_basket, only: [:edit, :show, :delete, :update]
-  before_action :set_type
+  before_action :set_category
 
   def index
     @baskets = Basket.all
@@ -40,7 +40,7 @@ class BasketsController < ApplicationController
 
   private
   def basket_params
-    params.require(:basket).permit(:type, :time_frame, :instructions)
+    params.require(:basket).permit(:category, :time_frame, :instructions)
   end
   
   def find_basket
@@ -50,15 +50,15 @@ class BasketsController < ApplicationController
     end
   end
 
-  def type
-    Basket.types.include?(params[:type]) ? params[:type] : "Basket"
+  def category
+    Basket.categories.include?(params[:category]) ? params[:category] : "Basket"
   end
 
-  def type_class
-    type.constantize
+  def category_class
+    category.constantize
   end
-  
-  def set_type
-    @type = type
+
+  def set_category
+    @category = category
   end
 end

@@ -26,17 +26,13 @@ ActiveRecord::Schema.define(version: 20150711191850) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "baksets", force: :cascade do |t|
-  end
-
   create_table "baskets", force: :cascade do |t|
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "category"
+    t.string   "type"
     t.integer  "user_id"
     t.integer  "time_frame"
     t.text     "instructions"
-    t.string   "name"
   end
 
   create_table "items", force: :cascade do |t|

@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20150711205042) do
 
   # These are extensions that must be enabled in order to support this database
@@ -36,6 +37,17 @@ ActiveRecord::Schema.define(version: 20150711205042) do
     t.text     "instructions"
     t.string   "name"
   end
+
+  create_table "drivers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "drivers", ["name", "resource_type", "resource_id"], name: "index_drivers_on_name_and_resource_type_and_resource_id", using: :btree
+  add_index "drivers", ["name"], name: "index_drivers_on_name", using: :btree
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -119,6 +131,13 @@ ActiveRecord::Schema.define(version: 20150711205042) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "users_drivers", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "driver_id"
+  end
+
+  add_index "users_drivers", ["user_id", "driver_id"], name: "index_users_drivers_on_user_id_and_driver_id", using: :btree
 
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"

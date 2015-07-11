@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   root to: 'visitors#index'
   
-  devise_for :users
+  devise_for :users, controllers: {registrations: "registrations"}
 
   post "baskets/:basket_id/send_sms" => "users#send_sms", as: :send_sms
 

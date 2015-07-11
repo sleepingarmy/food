@@ -40,6 +40,22 @@ class UsersController < ApplicationController
     redirect_to(root_path)
   end
 
+  def send_sms
+    if user.has_role? :driver
+      user = current_user
+      basket = Basket.find(params[:basket_id])
+      recipient = basket.user
+
+      body = "Your basket (#{basket.name}) is being delivered by #{user.name}"
+
+      user.driver.send_sms(recipient, body)
+
+      redirect_to users_path, :alert => 'SMS Sent'
+    else
+      redirect_to :back, :alert => 'You are not signed up as a driver!'
+    end
+  end
+
   private
 
   def find_user
@@ -52,17 +68,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation, :email)
-
-  def send_sms
-    user = current_user
-    basket = Basket.find(params[:basket_id])
-    recipient = basket.user
-
-    body = "Your basket (#{basket.name}) is being delivered by #{user.name}"
-
-    user.send_sms(recipient, body)
-
-    redirect_to users_path, :alert => 'SMS Sent'
   end
 
 end

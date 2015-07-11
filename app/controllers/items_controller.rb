@@ -31,6 +31,11 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def destroy
+    @item.destroy
+    redirect_to basket_path(@basket.id)
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :quantity, :brand, :instructions)

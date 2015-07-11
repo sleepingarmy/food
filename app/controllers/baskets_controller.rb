@@ -1,6 +1,10 @@
 class BasketsController < ApplicationController
   before_action :find_basket
 
+  def index
+    @baskets = Basket.all
+  end
+  
   def show
     @items = @basket.items
   end

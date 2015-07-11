@@ -12,4 +12,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def send_sms
+    user = current_user
+    basket = Basket.find(params[:basket_id])
+    recipient = basket.user
+
+    body = "Your basket (#{basket.name}) is being delivered by #{user.name}"
+
+    user.send_sms(recipient, body)
+
+    redirect_to users_path, :alert => 'SMS Sent'
+  end
+
 end

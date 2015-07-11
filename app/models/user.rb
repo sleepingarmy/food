@@ -5,5 +5,19 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :addresses
   has_many :baskets
-  has_many :baskets
+
+  def send_sms(recipient, body)
+    @client = setup_twilio_client
+    @client.account.messages.create(
+      from: ENV['twilio_number'],
+      to: recipient.phone,
+      body: body
+    )
+  end
+
+  private
+
+  def setup_twilio_client
+    Twilio::REST::Client.new ENV['account_sid'], ENV['auth_token']  
+  end
 end

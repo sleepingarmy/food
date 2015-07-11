@@ -1,9 +1,9 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
   <li><%= link_to 'Add New Basket', new_basket_path %></li>
-  <li><%= link_to 'My Baskets', baskets_path %></li>
+  <li><%= link_to 'My Baskets', my_basket_path %></li>
   <li><%= link_to 'Pick Up Baskets', baskets_path %></li>
-  <li><button class="dropdown-toggle p-relative" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <li><button class="dropdown-toggle right-position" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
   	Account
   	<span class="caret"></span>
   </button>

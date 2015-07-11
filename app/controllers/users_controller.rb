@@ -10,9 +10,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # def create
-  #   @user = User.create(user_params)
-  # end
+  def create
+    @user = User.create(user_params)
+  end
 
   def edit
   end
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
   private
 
   def find_user
-    @user = User.find_by(id: params[:id])
+    @user = current_user
     unless @user
       render(text: "User not found.", status: :not_found)
     end
@@ -68,6 +68,20 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation, :email)
+
+  end
+
+  def send_sms
+    user = current_user
+    basket = Basket.find(params[:basket_id])
+    recipient = basket.user
+
+    body = "Your basket (#{basket.name}) is being delivered by #{user.name}"
+
+    user.send_sms(recipient, body)
+
+    redirect_to users_path, :alert => 'SMS Sent'
+
   end
 
 end

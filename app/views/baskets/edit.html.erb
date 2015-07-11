@@ -11,23 +11,21 @@
 
   <div class="form-group">  
     <%= f.label :category %>
-    <%= f.text_field :category %>
+    <%= f.select :category, options_for_select(['groceries', 'general', 'restaurant']) %>
+
   </div>
   
   <div class="form-group"></div>
-    <%= f.label :time_frame %>
-    <%= f.number_field :time_frame %>
+    <b> Deliver By <b>
+    <%= f.number_field :time_frame %><b>hour(s)</b>
   </div>
   
   <div class="form-group">
-    <%= f.label :instructions %>
+    <b> Special Instructions </b>
     <%= f.text_field :instructions %>
   </div>
 
 
   <%= f.submit "save"  %>
 <% end %>
-
-
-
 

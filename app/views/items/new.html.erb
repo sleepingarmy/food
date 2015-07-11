@@ -1,2 +1,16 @@
 <h1>create new item</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<%= form_for @item, :url => @basket_item_path, :html => { :multipart => true } do |f| %>
+	<%= f.label(:name)%>
+	<%= f.text_field(:name)%>
+	<br>
+	<%= f.label(:quantity)%>
+	<%= f.select :quantity, options_for_select(1..50)%>
+	<br>
+	<%= f.label(:brand)%>
+	<%= f.text_field(:brand)%> (Optional)
+	<br>
+	<%= f.label(:instructions)%>
+	<%= f.text_field(:instructions)%>	(Optional)
+	<br>
+	<%= f.submit("Submit Item")%>
+<%end%>

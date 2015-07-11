@@ -1,5 +1,6 @@
 class BasketsController < ApplicationController
   before_action :find_basket, only: [:edit, :show, :delete, :update]
+  before_action :set_type
 
   def index
     @baskets = Basket.all
@@ -47,5 +48,17 @@ class BasketsController < ApplicationController
     unless @basket
       render(text: 'not found', status: 404)
     end
+  end
+
+  def type
+    Basket.types.include?(params[:type]) ? params[:type] : "Basket"
+  end
+
+  def type_class
+    type.constantize
+  end
+  
+  def set_type
+    @type = type
   end
 end

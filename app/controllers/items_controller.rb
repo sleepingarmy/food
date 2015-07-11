@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :find_item, only: [:edit, :show, :delete, :update]
 
   def index
-    @items = @basket.tasks.all
+    @items = @basket.items.all
   end
 
   def new

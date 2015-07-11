@@ -1,5 +1,6 @@
 class Basket < ActiveRecord::Base
   belongs_to :user
+  has_many :items
   self.inheritance_column = :category
   def self.categories 
     %w(Grocery Restaurant General)

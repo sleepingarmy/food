@@ -1,6 +1,6 @@
 class AddressController < ApplicationController
 	def index
-		@address = @user.index
+		@address = @user.address
 		
 	end
 

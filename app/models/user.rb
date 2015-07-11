@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :addresses
+  has_many :baskets
 
   def send_sms(recipient, body)
     @client = setup_twilio_client
@@ -18,5 +20,4 @@ class User < ActiveRecord::Base
   def setup_twilio_client
     Twilio::REST::Client.new ENV['account_sid'], ENV['auth_token']  
   end
-
 end
